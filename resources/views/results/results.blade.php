@@ -1,7 +1,7 @@
 @include('include.header')
 <!-- PAGE HEADER -->
 <div id="post-header" class="page-header">
-	<div class="page-header-bg" style="background-image: url({{asset('./img/header-1.jpg')}});" data-stellar-background-ratio="0.5"></div>
+	<div class="page-header-bg" style="background-color: gray" data-stellar-background-ratio="0.5"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
