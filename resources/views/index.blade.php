@@ -2,12 +2,12 @@
 
 
 	<!-- SECTION -->
-	<div class="section">
+	<center><h1>BOST ANIME</h1></center>
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
-			<div id="hot-post" class="row hot-post">
-				<div class="col-md-8 hot-post-left">
+			<div id="">
+				<div class="col-md-8">
 					<!-- post -->
 					@foreach ($post as $post)
 					<div class="post post-thumb">
@@ -33,6 +33,7 @@
 		
 
 	</div>
+</div>
 
 				
 					<!-- /post -->	<!-- post -->

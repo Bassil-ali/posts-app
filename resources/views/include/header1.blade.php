@@ -91,7 +91,7 @@
 				<!-- Aside Nav -->
 				<div id="nav-aside">
 					<ul class="nav-aside-menu">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="/">{{$blog_name}} </a></li>
 						<li class="has-dropdown"><a>Categories</a>
 							<ul class="dropdown">
 									@foreach ($categories as $category)
@@ -105,10 +105,8 @@
 				</div>
 				<!-- /Aside Nav -->
 			</div>
+			
 			<!-- /NAV -->
 		</header>
 		<!-- /HEADER -->
-			<script src='{{asset("js/jquery.min.js")}}'></script>
-	<script src='{{asset("js/bootstrap.min.js")}}'></script>
-	<script src='{{asset("js/jquery.stellar.min.js")}}'></script>
-	<script src='{{asset("js/main.js")}}'></script>
+			
