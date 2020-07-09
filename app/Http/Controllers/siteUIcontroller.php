@@ -62,7 +62,7 @@ class siteUIcontroller extends Controller
         return view('categories.category') 
                             ->with('tags' , Tag::all() ) 
                             ->with('title' , $category->name)
-                            ->with('categories' , Category::take(5)->get() ) 
+                            ->with('categories' , Category::take(10)->get() ) 
                             ->with('blog_name' , Setting::first())
                             ->with('settings',  Setting::first() )
                             ->with('name' , $category->name )  

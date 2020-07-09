@@ -15,6 +15,7 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+ Route::get('/', 'siteUIcontroller@index')->name('index');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
@@ -76,7 +77,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
         Route::post('/settings/update', 'SettingsController@update')->name('settings.update');
 
         //route for User front end
-        Route::get('/', 'siteUIcontroller@index')->name('index');
+       
         Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
         Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
 

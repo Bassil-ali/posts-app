@@ -18,7 +18,7 @@
 							</div>
 							<h3 class="post-title title-lg"><a href="#">{{$post->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="#">John Doe</a></li>
+								<li><a href="#">posts</a></li>
 								<li>{{$post->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
