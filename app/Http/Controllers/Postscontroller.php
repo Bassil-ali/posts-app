@@ -92,7 +92,7 @@ class PostsController extends Controller
             "content"  => $request->content,
             "category_id"  => $request->category_id,
             "featrued" => 'uploads/posts/'.$featured_new_name,
-            "slug"    => str_slug($request->title), // my new post => my-new-post
+            "slug"    => $request->title, // my new post => my-new-post
             "user_id" => Auth::id()
         ]);
 
