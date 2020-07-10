@@ -14,6 +14,25 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 
 // Route::get('/', function () {
 //     return view('welcome');
+   //route for User front end
+         Route::get('/results', function () {
+            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
+            return view('results.results')
+            ->with('posts' , $post ) 
+            ->with('title' ,  'Result : '. request('search') )
+            ->with('settings',  App\Setting::first() )
+            ->with('blog_name' , App\Setting::first()->blog_name)
+            ->with('categories' , App\Category::take(5)->get() )   
+            ->with('query' , request('search') )   ;
+            
+        }) ;
+
+        Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
+        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
+
+         //route for showing single post
+         Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
+
 // });
  Route::get('/', 'siteUIcontroller@index')->name('index');
 
@@ -76,32 +95,14 @@ Route::get('/home', 'HomeController@index')->name('home') ;
         Route::get('/settings', 'SettingsController@index')->name('settings');
         Route::post('/settings/update', 'SettingsController@update')->name('settings.update');
 
-        //route for User front end
-       
-        Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
-        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
-
-         //route for showing single post
-         Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
-
+     
 
         //route for admin dashboard
       Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
 
 
       //route for query results
-        Route::get('/results', function () {
-            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
-            return view('results.results')
-            ->with('posts' , $post ) 
-            ->with('title' ,  'Result : '. request('search') )
-            ->with('settings',  App\Setting::first() )
-            ->with('blog_name' , App\Setting::first()->blog_name)
-            ->with('categories' , App\Category::take(5)->get() )   
-            ->with('query' , request('search') )   ;
-            
-        }) ;
-
+      
 
 
 
