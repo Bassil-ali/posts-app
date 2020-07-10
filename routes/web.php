@@ -11,7 +11,13 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 | contains the "web" middleware group. Now create something great!
 |
 */
-  Route::get('/results', function () {
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+ Route::get('/', 'siteUIcontroller@index')->name('index');
+// Auth::routes();
+   Route::get('/results', function () {
             $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
             return view('results.results')
             ->with('posts' , $post ) 
@@ -22,20 +28,7 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
             ->with('query' , request('search') )   ;
             
         }) ;
-   Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
- Route::get('/', 'siteUIcontroller@index')->name('index');
-        Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
-        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
 
-         //route for showing single post
-         Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Auth::routes();
 Auth::routes(['verify' => true]);
 
 
@@ -96,8 +89,15 @@ Route::get('/home', 'HomeController@index')->name('home') ;
 
         //route for User front end
        
+        Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
+        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
+
+         //route for showing single post
+         Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
+
+
         //route for admin dashboard
-     
+      Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
 
 
       //route for query results
@@ -240,7 +240,7 @@ Route::get('/greeting', function () {
 
 
 
-Route::get('/', 'siteUIcontroller@index')->name('index');
+
 
 
 
