@@ -49,7 +49,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
   Route::group([ 'middleware'=>'auth'], function () {   
     //route for posts
     Route::get('/posts', 'PostsController@index')->name('posts'); 
-    Route::get('', 'PostsController@trashed')->name('post.trashed');
+    Route::get('posts/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/post/hdelete/{id}', 'PostsController@hdelete')->name('post.hdelete');
     Route::get('/post/restore/{id}', 'PostsController@restore')->name('post.restore');
     Route::get('/post/edit/{id}', 'PostsController@edit')->name('post.edit');
