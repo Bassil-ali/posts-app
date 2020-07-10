@@ -138,7 +138,7 @@
                         <a class="dropdown-item" href="{{route('post.create')}}">Create</a>
                         <a class="dropdown-item" href="{{route('posts')}}">Posts</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{route('post.trashed')}}">Posts soft deleted</a>
+                        <a class="dropdown-item" href="/post/trashed">Posts soft deleted</a>
                       </div>
                     </li>
                     

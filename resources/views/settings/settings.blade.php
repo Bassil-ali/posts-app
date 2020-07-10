@@ -31,27 +31,27 @@
 
                     
 
-                    <form action="{{route('settings.update')}}" method="POST"  >
+                    <form action="{{route('settings.store')}}" method="POST"  >
                         {{ csrf_field()}}
                         <div class="form-group">
                           <label for="blog_name">Blog name</label>
-                          <input type="text" class="form-control" name="blog_name"  value="{{$settings->blog_name}}">
+                          <input type="text" class="form-control" name="blog_name"  value="">
                          </div>
 
                     <div class="form-group">
                             <label for="phone_number">Phone </label>
-                            <input type="text" class="form-control" name="phone_number"  value="{{$settings->phone_number}}">
+                            <input type="text" class="form-control" name="phone_number"  value="">
                         </div>
 
 
                     <div class="form-group">
                             <label for="blog_email">Email</label>
-                            <input type="text" class="form-control" name="blog_email"  value="{{$settings->blog_email}}">
+                            <input type="text" class="form-control" name="blog_email"  value="">
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" name="address"  value="{{$settings->address}}">
+                            <input type="text" class="form-control" name="address"  value="">
                             </div>
                         
                          

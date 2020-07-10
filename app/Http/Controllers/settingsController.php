@@ -20,7 +20,7 @@ class SettingsController extends Controller
 
 
 
-    public function update(Request $request){
+    public function store(Request $request){
  
         $this->validate($request,[
             "blog_name"    => "required",
@@ -29,17 +29,14 @@ class SettingsController extends Controller
             "address"  => "required" 
             
         ]);
+$setting = Setting::create([
+            'blog_name' => $request->blog_name,
+            'phone_number' => $request->phone_number,
+            'blog_email' => $request->blog_email,
+             'address'  =>  $request->address,
+        ]);
 
 
-        $setting = Setting::first();
-
-
-        $setting->blog_name =  $request->blog_name;
-        $setting->phone_number =  $request->phone_number;
-        $setting->blog_email = $request->blog_email;
-        $setting->address = $request->address;
-        $setting->save();
-   
         
         return redirect()->back();
 

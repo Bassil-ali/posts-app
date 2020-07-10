@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\post;
 use App\User;
 use App\Profile;
 use App\Role;
