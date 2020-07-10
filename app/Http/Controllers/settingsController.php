@@ -20,7 +20,7 @@ class SettingsController extends Controller
 
 
 
-    public function store(Request $request){
+    public function update(Request $request){
  
         $this->validate($request,[
             "blog_name"    => "required",

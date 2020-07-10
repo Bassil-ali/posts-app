@@ -19,12 +19,11 @@ class siteUIcontroller extends Controller
     public function index()
     {
         return view('index')->with('blog_name' , Setting::first()->blog_name)
-                            ->with('categories' , Category::take(10)->get() ) 
+                            ->with('categories' , Category::take(5)->get() ) 
                             ->with('tags' , Tag::take(12)->get() ) 
-                            ->with('post' , Post::all())
+                            ->with('post' , Post::all());
                            
-                            
-                             ;
+                             
 
     }
 
@@ -62,8 +61,8 @@ class siteUIcontroller extends Controller
         return view('categories.category') 
                             ->with('tags' , Tag::all() ) 
                             ->with('title' , $category->name)
-                            ->with('categories' , Category::take(10)->get() ) 
-                            ->with('blog_name' , Setting::first())
+                            ->with('categories' , Category::take(5)->get() ) 
+                            ->with('blog_name' , Setting::first()->blog_name)
                             ->with('settings',  Setting::first() )
                             ->with('name' , $category->name )  
                             ->with('category' , $category )    ;

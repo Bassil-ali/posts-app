@@ -77,7 +77,6 @@ class PostsController extends Controller
         $this->validate($request,[
             "title"    => "required",
             "content"  => "required",
-           
             "category_id"  => "required",
             "featured" => "required|image",
             "tags" => "required"
@@ -91,11 +90,10 @@ class PostsController extends Controller
         $post = Post::create([
             "title"    => $request->title,
             "content"  => $request->content,
-            
             "category_id"  => $request->category_id,
             "featrued" => 'uploads/posts/'.$featured_new_name,
-            "slug"    => $request->title, // my new post => my-new-post
-           
+            "slug"    => str_slug($request->title), // my new post => my-new-post
+            "user_id" => Auth::id()
         ]);
 
         $post->tags()->attach($request->tags);

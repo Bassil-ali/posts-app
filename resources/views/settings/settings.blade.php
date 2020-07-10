@@ -31,7 +31,7 @@
 
                     
 
-                    <form action="{{route('settings.store')}}" method="POST"  >
+                    <form action="{{route('settings.update')}}" method="POST"  >
                         {{ csrf_field()}}
                         <div class="form-group">
                           <label for="blog_name">Blog name</label>

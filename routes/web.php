@@ -11,11 +11,7 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-   //route for User front end
-         Route::get('/results', function () {
+  Route::get('/results', function () {
             $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
             return view('results.results')
             ->with('posts' , $post ) 
@@ -26,15 +22,18 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
             ->with('query' , request('search') )   ;
             
         }) ;
-
+   Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
+ Route::get('/', 'siteUIcontroller@index')->name('index');
         Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
         Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
 
          //route for showing single post
          Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
 
+
+// Route::get('/', function () {
+//     return view('welcome');
 // });
- Route::get('/', 'siteUIcontroller@index')->name('index');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
@@ -49,7 +48,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
   Route::group([ 'middleware'=>'auth'], function () {   
     //route for posts
     Route::get('/posts', 'PostsController@index')->name('posts'); 
-    Route::get('posts/trashed', 'PostsController@trashed')->name('post.trashed');
+    Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/post/hdelete/{id}', 'PostsController@hdelete')->name('post.hdelete');
     Route::get('/post/restore/{id}', 'PostsController@restore')->name('post.restore');
     Route::get('/post/edit/{id}', 'PostsController@edit')->name('post.edit');
@@ -93,12 +92,12 @@ Route::get('/home', 'HomeController@index')->name('home') ;
 
         //route for Settings
         Route::get('/settings', 'SettingsController@index')->name('settings');
-        Route::post('/settings/store', 'SettingsController@store')->name('settings.store');
+        Route::post('/settings/update', 'SettingsController@update')->name('settings.update');
 
-     
-
+        //route for User front end
+       
         //route for admin dashboard
-      Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
+     
 
 
       //route for query results
@@ -113,13 +112,13 @@ Route::get('/home', 'HomeController@index')->name('home') ;
   
 
           //route for sending emails
-      //  Route::get('/testmail', function () {
+        Route::get('/testmail', function () {
  
-        //    $data = ['message' => 'This is a test!'];
-        //    Mail::to('muhammed.essa@gmail.com')->send(new TestEmail($data));
+            $data = ['message' => 'This is a test!'];
+            Mail::to('muhammed.essa@gmail.com')->send(new TestEmail($data));
 
-          //  return back();
-          //  })->name('testmail');
+            return back();
+            })->name('testmail');
 
 
 
@@ -195,53 +194,53 @@ Route::get('/newrole', function(){
 
 
 
-        // make new permission
-    Route::get('/newpermission', function(){
-       
-       
-        $createPost = new App\Permission();
-        $createPost->name         = 'create-post';
-        $createPost->display_name = 'Create Posts'; // optional
-        // Allow a user to...
-        $createPost->description  = 'create new blog posts'; // optional
-        $createPost->save();
-        
-        $editUser = new App\Permission();
-        $editUser->name         = 'edit-user';
-        $editUser->display_name = 'Edit Users'; // optional
-        // Allow a user to...
-        $editUser->description  = 'edit existing users'; // optional
-        $editUser->save();
+    // make new permission
+Route::get('/newpermission', function(){
+   
+   
+    $createPost = new App\Permission();
+    $createPost->name         = 'create-post';
+    $createPost->display_name = 'Create Posts'; // optional
+    // Allow a user to...
+    $createPost->description  = 'create new blog posts'; // optional
+    $createPost->save();
+    
+    $editUser = new App\Permission();
+    $editUser->name         = 'edit-user';
+    $editUser->display_name = 'Edit Users'; // optional
+    // Allow a user to...
+    $editUser->description  = 'edit existing users'; // optional
+    $editUser->save();
 
-        return back();
-        })->name('newpermission'); 
-
-
+    return back();
+    })->name('newpermission'); 
 
 
 
 
 
-    Route::group([ 'middleware'=>['role:adminsitrator']], function () {   
-
-     Route::resource('userss', 'UserssController') ;
-     Route::resource('permission', 'PermissionController') ;
-     Route::resource('roles', 'RolesController') ;
-    });
 
 
-    Route::get('/greeting', function () {
+Route::group([ 'middleware'=>['role:adminsitrator']], function () {   
 
-        
+ Route::resource('userss', 'UserssController') ;
+ Route::resource('permission', 'PermissionController') ;
+ Route::resource('roles', 'RolesController') ;
+});
 
 
+Route::get('/greeting', function () {
 
-        return view('greeting', ['name' => 'Muhammed Essa']);
-    });
+    
 
 
 
+    return view('greeting', ['name' => 'Muhammed Essa']);
+});
 
+
+
+Route::get('/', 'siteUIcontroller@index')->name('index');
 
 
 
