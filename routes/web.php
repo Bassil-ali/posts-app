@@ -15,20 +15,11 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+  Route::get('/post/create', 'PostsController@create')->name('post.create');
  Route::get('/', 'siteUIcontroller@index')->name('index');
-// Auth::routes();
-   Route::get('/results', function () {
-            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
-            return view('results.results')
-            ->with('posts' , $post ) 
-            ->with('title' ,  'Result : '. request('search') )
-            ->with('settings',  App\Setting::first() )
-            ->with('blog_name' , App\Setting::first()->blog_name)
-            ->with('categories' , App\Category::take(5)->get() )   
-            ->with('query' , request('search') )   ;
-            
-        }) ;
+    Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
 
+// Auth::routes();
 Auth::routes(['verify' => true]);
 
 
@@ -46,7 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
     Route::get('/post/restore/{id}', 'PostsController@restore')->name('post.restore');
     Route::get('/post/edit/{id}', 'PostsController@edit')->name('post.edit');
     Route::post('/post/update/{id}', 'PostsController@update')->name('post.update');
-    Route::get('/post/create', 'PostsController@create')->name('post.create');
+  
     Route::post('/post/store', 'PostsController@store')->name('post.store'); 
     Route::get('/post/delete/{id}', 'PostsController@destroy')->name('post.delete'); 
     
@@ -93,15 +84,25 @@ Route::get('/home', 'HomeController@index')->name('home') ;
         Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
 
          //route for showing single post
-         Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
-
+      
 
         //route for admin dashboard
       Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard'); 
 
 
       //route for query results
-      
+        Route::get('/results', function () {
+            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
+            return view('results.results')
+            ->with('posts' , $post ) 
+            ->with('title' ,  'Result : '. request('search') )
+            ->with('settings',  App\Setting::first() )
+            ->with('blog_name' , App\Setting::first()->blog_name)
+            ->with('categories' , App\Category::take(5)->get() )   
+            ->with('query' , request('search') )   ;
+            
+        }) ;
+
 
 
 

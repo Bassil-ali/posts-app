@@ -31,11 +31,10 @@ class siteUIcontroller extends Controller
 
     public function showPost($slug)
     {
-
-        $post      = Post::where('slug' , $slug)->first();
-        $next_page = Post::where('id' , '>' ,$post->id)->min('id');
-        $prev_page = Post::where('id' , '<' ,$post->id)->max('id');
-
+$next_page=$prev_page=null;
+$post = Post::where('slug' , $slug)->first();
+If($post){
+$next_page = Post::where('id' , '>' ,$post->id)->min('id'); $prev_page = Post::where('id' , '<' ,$post->id)->max('id');}
 
         return view('posts.show') 
                              
