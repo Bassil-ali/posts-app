@@ -16,8 +16,12 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 //     return view('welcome');
 // });
   Route::get('/post/create', 'PostsController@create')->name('post.create');
+   Route::get('/category/create', 'CategoriesController@create')->name('category.create');   
+    Route::get('/tag/create', 'TagController@create')->name('tag.create');   
  Route::get('/', 'siteUIcontroller@index')->name('index');
     Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
+       Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
+        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
@@ -45,7 +49,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
     Route::get('/categories', 'CategoriesController@index')->name('categories'); 
     Route::get('/category/edit/{id}', 'CategoriesController@edit')->name('category.edit');
     Route::get('/category/delete/{id}', 'CategoriesController@destroy')->name('category.delete'); 
-    Route::get('/category/create', 'CategoriesController@create')->name('category.create');   
+   
     Route::post('/category/store', 'CategoriesController@store')->name('category.store'); 
     Route::post('/category/update/{id}', 'CategoriesController@update')->name('category.update'); 
 
@@ -54,7 +58,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
     Route::get('/tags', 'TagController@index')->name('tags'); 
     Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
     Route::get('/tag/delete/{id}', 'TagController@destroy')->name('tag.delete'); 
-    Route::get('/tag/create', 'TagController@create')->name('tag.create');   
+   
     Route::post('/tag/store', 'TagController@store')->name('tag.store'); 
     Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update'); 
  
@@ -80,8 +84,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
 
         //route for User front end
        
-        Route::get('/category/{id}', 'siteUIcontroller@category')->name('category.show');
-        Route::get('/tag/{id}', 'siteUIcontroller@tag')->name('tag.show');
+     
 
          //route for showing single post
       

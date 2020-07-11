@@ -99,6 +99,13 @@
 									@endforeach
 							</ul>
 						</li>
+						<li class="has-dropdown"><a>Tags</a>
+							<ul class="dropdown">
+								@foreach ($tags as $tag)
+									<li><a href="{{route('tag.show', ['id' => $tag->id])}}">{{$tag->tag}}</a></li>
+									@endforeach
+							</ul>
+						</li>
 						</a></li>
 					</ul>
 					<button class="nav-close nav-aside-close"><span></span></button>

@@ -25,21 +25,6 @@
 				<div class="col-md-8">
 
 
-						<div class="section-row">
-								<div class="section-title">
-									
-								</div>
-		
-		
-								<h1></h1>
-
-								
-								
-
-								 
-								<p></p>
-								 
-							 </div>
 
 
 
@@ -49,7 +34,7 @@
 						</div>
 
 
-						<h1></h1>
+						
 						<p>{!! $post->content !!}</p>
 						@foreach($post->tags as $tag)
 						<a href="{{route('tag.show', ['id' => $tag->id])}}" 
@@ -66,13 +51,13 @@
 							 <br>
 
 							 @if ($prev)
-							 <a href="{{route('post.show', ['slug' => $prev->slug])}}" 
-								 class="badge badge-danger"> Next => {{$prev->title}} </a>
+							 <a  href="{{route('post.show', ['slug' => $prev->slug])}}" 
+								 class="btn btn-success"> Next post {{$prev->title}} </a>
 							 @endif
 
 							 @if ($next)
 							 <a href="{{route('post.show', ['slug' => $next->slug])}}" 
-								 class="badge badge-danger"> Prev => {{$next->title}} </a>
+								 class="btn btn-success"> Prev post {{$next->title}} </a>
 							 @endif
 							 
 						  

@@ -25,7 +25,7 @@
 							<ul>
 
                                     @foreach ($categories as $category)
-                                    <li><a href="#">{{$category->name}} <span></span></a></li>
+                                    <li><a href="{{route('category.show', ['id' => $category->id])}}">{{$category->name}} <span></span></a></li>
                                     @endforeach
 
 
@@ -41,7 +41,7 @@
 							<ul>
 
                                     @foreach ($tags as $tag)
-                                    <li><a href="#">{{$tag->tag}}  </a></li>
+                                    <li><a href="{{route('tag.show', ['id' => $tag->id])}}">{{$tag->tag}}  </a></li>
                                     @endforeach
 
 							 
@@ -82,7 +82,7 @@ Copyright &copy;
 <script>document.write(new Date().getFullYear());</script> 
 All rights reserved | This template is made with 
 <i class="fa fa-heart-o" aria-hidden="true"></i> by 
-<a href="https://colorlib.com" target="_blank">BASSIL ALI</a>
+<a href="" target="_blank">BASSIL ALI</a>
  
 					</div>
 				</div>

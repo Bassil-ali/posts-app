@@ -19,7 +19,7 @@ class siteUIcontroller extends Controller
     public function index()
     {
         return view('index')->with('blog_name' , Setting::first()->blog_name)
-                            ->with('categories' , Category::take(5)->get() ) 
+                            ->with('categories' , Category::take(12)->get() ) 
                             ->with('tags' , Tag::take(12)->get() ) 
                             ->with('post' , Post::all());
                            
@@ -45,7 +45,7 @@ $next_page = Post::where('id' , '>' ,$post->id)->min('id'); $prev_page = Post::w
                             ->with('title' , $post->title)
                             ->with('blog_name' , Setting::first()->blog_name)
                             ->with('settings',  Setting::first() )
-                            ->with('categories' , Category::take(5)->get() )   ;
+                            ->with('categories' , Category::all() )   ;
 
     }
 
@@ -60,7 +60,7 @@ $next_page = Post::where('id' , '>' ,$post->id)->min('id'); $prev_page = Post::w
         return view('categories.category') 
                             ->with('tags' , Tag::all() ) 
                             ->with('title' , $category->name)
-                            ->with('categories' , Category::take(5)->get() ) 
+                            ->with('categories' , Category::all() ) 
                             ->with('blog_name' , Setting::first()->blog_name)
                             ->with('settings',  Setting::first() )
                             ->with('name' , $category->name )  
@@ -79,7 +79,7 @@ $next_page = Post::where('id' , '>' ,$post->id)->min('id'); $prev_page = Post::w
         return view('tags.tags') 
                              
                             ->with('title' , $tag->tag)
-                            ->with('categories' , Category::take(5)->get() ) 
+                            ->with('categories' , Category::all() ) 
                             ->with('blog_name' , Setting::first()->blog_name)
                             ->with('settings',  Setting::first() )
                             ->with('name' , $tag->name )  
