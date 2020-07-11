@@ -2,7 +2,7 @@
 
 
 	<!-- SECTION -->
-	<center><h1>BOST ANIME</h1></center>
+	<center><h1>LARAPOS</h1></center>
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
