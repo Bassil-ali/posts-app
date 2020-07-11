@@ -16,7 +16,18 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 //     return view('welcome');
 // });
   Route::get('/post/create', 'PostsController@create')->name('post.create');
-   Route::get('/category/create', 'CategoriesController@create')->name('category.create');   
+   Route::get('/category/create', 'CategoriesController@create')->name('category.create');
+     Route::get('/results', function () {
+            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
+            return view('results.results')
+            ->with('posts' , $post ) 
+            ->with('title' ,  'Result : '. request('search') )
+            ->with('settings',  App\Setting::first() )
+            ->with('blog_name' , App\Setting::first()->blog_name)
+            ->with('categories' , App\Category::take(5)->get() )   
+            ->with('query' , request('search') )   ;
+            
+        }) ;   
     Route::get('/tag/create', 'TagController@create')->name('tag.create');   
  Route::get('/', 'siteUIcontroller@index')->name('index');
     Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
@@ -94,17 +105,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
 
 
       //route for query results
-        Route::get('/results', function () {
-            $post = App\Post::where('title', 'like' ,  '%' . request('search') . '%' )->get();
-            return view('results.results')
-            ->with('posts' , $post ) 
-            ->with('title' ,  'Result : '. request('search') )
-            ->with('settings',  App\Setting::first() )
-            ->with('blog_name' , App\Setting::first()->blog_name)
-            ->with('categories' , App\Category::take(5)->get() )   
-            ->with('query' , request('search') )   ;
-            
-        }) ;
+      
 
 
 
