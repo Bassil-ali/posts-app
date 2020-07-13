@@ -67,6 +67,6 @@
 
 </html>
 
-	<script src='{{secure_asset("js/bootstrap.min.js")}}'></script>
+
 	
 	

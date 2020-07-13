@@ -10,19 +10,19 @@
 	<title>larapos</title>
 
 	<!-- Google font -->
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
 	
-	<link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{secure_asset('css/bootstrap.css')}}" />
 
 	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href=" {{asset('css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href=" {{secure_asset('css/font-awesome.min.css') }}">
 
  
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{secure_asset('css/style.css')}}" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,7 +107,7 @@
 				<!-- Aside Nav -->
 				
 		<hr>
-	<script src='{{asset("js/jquery.min.js")}}'></script>
-	<script src='{{asset("js/bootstrap.min.js")}}'></script>
-	<script src='{{asset("js/jquery.stellar.min.js")}}'></script>
-	<script src='{{asset("js/main.js")}}'></script>
+	<script src='{{secure_asset("js/jquery.min.js")}}'></script>
+	<script src='{{secure_asset("js/bootstrap.min.js")}}'></script>
+	<script src='{{secure_asset("js/jquery.stellar.min.js")}}'></script>
+	<script src='{{secure_asset("js/main.js")}}'></script>
