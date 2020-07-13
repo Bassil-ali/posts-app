@@ -66,7 +66,7 @@
 </body>
 
 </html>
-	<script src='{{secure_asset("js/jquery.min.js")}}'></script>
+
 	<script src='{{secure_asset("js/bootstrap.min.js")}}'></script>
-	<script src='{{secure_asset("js/jquery.stellar.min.js")}}'></script>
-	<script src='{{secure_asset("js/main.js")}}'></script>
+	
+	

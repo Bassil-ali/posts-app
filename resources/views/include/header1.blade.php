@@ -14,15 +14,15 @@
 
 	<!-- Bootstrap -->
 	
-	<link type="text/css" rel="stylesheet" href="{{secure_asset('css/bootstrap.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
 
 	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href=" {{secure_asset('css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href=" {{asset('css/font-awesome.min.css') }}">
 
  
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="{{secure_asset('css/style.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +35,7 @@
 
  
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-info">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">{{$blog_name}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,7 @@
     <form class="form-inline my-2 my-lg-0" method="GET" action="/results">
     	{{ csrf_field()}}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
@@ -97,8 +97,5 @@
 				
 		<hr>
 		<!-- /HEADER -->
-			<script src='{{secure_asset("js/jquery.min.js")}}'></script>
-	<script src='{{secure_asset("js/bootstrap.js")}}'></script>
-	<script src='{{secure_asset("js/jquery.stellar.min.js")}}'></script>
-	<script src='{{secure_asset("js/main.js")}}'></script>
-
+			
+	<script src='{{asset("js/bootstrap.js")}}'></script>

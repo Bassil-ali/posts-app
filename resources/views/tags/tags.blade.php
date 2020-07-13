@@ -1,7 +1,7 @@
 @include('include.header1')
 <!-- PAGE HEADER -->
 <div id="post-header" class="page-header">
-	<div class="page-header-bg" style="background-image: url({{asset('./img/p.png')}});" ></div>
+	<div class="page-header-bg" style="background-image: url({{secure_asset('./img/p.png')}});" ></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
