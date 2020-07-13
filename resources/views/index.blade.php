@@ -15,6 +15,7 @@
 						<div class="post-body">
 							<div class="post-category">
 								<a href="{{route('category.show', ['id' => $post->category->id])}}">{{$post->category->name}}</a>
+								<h4>Read more topic</h4>
 							</div>
 							<h3 class="post-title title-lg"><a href="#">{{$post->title}}</a></h3>
 							<ul class="post-meta">
