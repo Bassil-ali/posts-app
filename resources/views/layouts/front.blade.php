@@ -54,7 +54,7 @@
 							 <a  href="{{route('post.show', ['slug' => $prev->slug])}}" 
 								 class="btn btn-success"> Next post {{$prev->title}} </a>
 							 @endif
-                              <br>
+                              
 							 @if ($next)
 							 <a href="{{route('post.show', ['slug' => $next->slug])}}" 
 								 class="btn btn-success"> Prev post {{$next->title}} </a>
