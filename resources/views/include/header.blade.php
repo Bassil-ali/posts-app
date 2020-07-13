@@ -36,7 +36,7 @@
  
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand" href="/">{{$blog_name}}</a>
+  <a class="navbar-brand" href="#">{{$blog_name}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -107,7 +107,7 @@
 				<!-- Aside Nav -->
 				
 		<hr>
-		<!-- /HEADER -->
-
-	<script src='{{asset("js/bootstrap.js")}}'></script>
-	
+	<script src='{{asset("js/jquery.min.js")}}'></script>
+	<script src='{{asset("js/bootstrap.min.js")}}'></script>
+	<script src='{{asset("js/jquery.stellar.min.js")}}'></script>
+	<script src='{{asset("js/main.js")}}'></script>
