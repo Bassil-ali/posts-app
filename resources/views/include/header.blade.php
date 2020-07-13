@@ -7,13 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>anime post</title>
+	<title>larapos</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
+	
+	<link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
 
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href=" {{asset('css/font-awesome.min.css') }}">
@@ -32,46 +33,60 @@
 
 </head>
 
-
+ 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">{{$blog_name}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        		@foreach ($categories as $category)
+          <a class="dropdown-item" href="{{route('category.show', ['id' => $category->id])}}">{{$category->name}}</a>
+          @endforeach
+       
+        </div>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tags
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        	@foreach ($tags as $tag)
+          <a class="dropdown-item" href="{{route('tag.show', ['id' => $tag->id])}}">{{$tag->tag}}</a>
+          @endforeach
+        
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="/results">
+    	{{ csrf_field()}}
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 		<!-- HEADER -->
-		<header id="header">
-			<!-- NAV -->
-			<div id="nav">
-				<!-- Top Nav -->
-				<div id="nav-top">
-					<div class="container">
-						<!-- social -->
-						<ul class="nav-social">
-					   <li><a href="/"><i  ></i> <h4>{{$blog_name}}</h4> </a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-						</ul>
-						<!-- /social -->
 	
-						 
-	
-						<!-- search & aside toggle -->
-						<div class="nav-btns">
-							<button class="aside-btn"><i class="fa fa-bars"></i></button>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<div id="nav-search">
-								<form method="GET" action="/results">
-									{{ csrf_field()}}
-									<input class="input" name="search" placeholder="Enter your search...">
-								</form>
-								<button class="nav-close search-close">
-									<span></span>
-								</button>
-							</div>
-						</div>
-						<!-- /search & aside toggle -->
-					</div>
-				</div>
+
 				<!-- /Top Nav -->
-	
+	  
 				<!-- Main Nav -->
 				<div id="nav-bottom">
 					<div class="container">
@@ -86,36 +101,15 @@
 						<!-- /nav -->
 					</div>
 				</div>
+
 				<!-- /Main Nav -->
 	
 				<!-- Aside Nav -->
-				<div id="nav-aside">
-					<ul class="nav-aside-menu">
-						<li><a href="/">{{$blog_name}} </a></li>
-						<li class="has-dropdown"><a>Categories</a>
-							<ul class="dropdown">
-									@foreach ($categories as $category)
-									<li><a href="{{route('category.show', ['id' => $category->id])}}">{{$category->name}}</a></li>
-									@endforeach
-							</ul>
-						</li>
-						<li class="has-dropdown"><a>Tags</a>
-							<ul class="dropdown">
-								@foreach ($tags as $tag)
-									<li><a href="{{route('tag.show', ['id' => $tag->id])}}">{{$tag->tag}}</a></li>
-									@endforeach
-							</ul>
-						</li>
-						</a></li>
-					</ul>
-					<button class="nav-close nav-aside-close"><span></span></button>
-				</div>
-				<!-- /Aside Nav -->
-			</div>
-			<!-- /NAV -->
-		</header>
+				
+		<hr>
 		<!-- /HEADER -->
 			<script src='{{asset("js/jquery.min.js")}}'></script>
-	<script src='{{asset("js/bootstrap.min.js")}}'></script>
+	<script src='{{asset("js/bootstrap.js")}}'></script>
 	<script src='{{asset("js/jquery.stellar.min.js")}}'></script>
 	<script src='{{asset("js/main.js")}}'></script>
+

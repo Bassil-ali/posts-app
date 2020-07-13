@@ -2,7 +2,7 @@
 
 		<!-- PAGE HEADER -->
 		<div class="page-header">
-			<div class="page-header-bg" style="background-image: url('{{$post->featrued}}');" data-stellar-background-ratio="0.5"></div>
+			<div class="page-header-bg" style="background-image: url('{{$post->featrued}}');"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 text-center">
@@ -54,7 +54,7 @@
 							 <a  href="{{route('post.show', ['slug' => $prev->slug])}}" 
 								 class="btn btn-success"> Next post {{$prev->title}} </a>
 							 @endif
-
+                              <br><br>
 							 @if ($next)
 							 <a href="{{route('post.show', ['slug' => $next->slug])}}" 
 								 class="btn btn-success"> Prev post {{$next->title}} </a>

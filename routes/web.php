@@ -28,6 +28,7 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
             ->with('query' , request('search') )   ;
             
         }) ;   
+      Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/tag/create', 'TagController@create')->name('tag.create');   
  Route::get('/', 'siteUIcontroller@index')->name('index');
     Route::get('/post/{slug}', 'siteUIcontroller@showPost')->name('post.show'); 
@@ -47,7 +48,7 @@ Route::get('/home', 'HomeController@index')->name('home') ;
   Route::group([ 'middleware'=>'auth'], function () {   
     //route for posts
     Route::get('/posts', 'PostsController@index')->name('posts'); 
-    Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
+   
     Route::get('/post/hdelete/{id}', 'PostsController@hdelete')->name('post.hdelete');
     Route::get('/post/restore/{id}', 'PostsController@restore')->name('post.restore');
     Route::get('/post/edit/{id}', 'PostsController@edit')->name('post.edit');
