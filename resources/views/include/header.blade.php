@@ -10,7 +10,7 @@
 	<title>larapos</title>
 
 	<!-- Google font -->
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
 	
