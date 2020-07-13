@@ -62,6 +62,7 @@
 							 
 						  
 						 </div>
+                          @include('include.disqus') 
 
 						
 								 
@@ -69,8 +70,7 @@
 							 </div>
 
 
-						@include('include.disqus') 
-
+						
 				</div>
 
 
