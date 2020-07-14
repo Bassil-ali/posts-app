@@ -85,7 +85,7 @@ class PostsController extends Controller
 
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
-        storage::disk('ftp')->put($file_new_name,fopen($request->file('featured')), 'r+');
+        Storage::disk('ftp')->put($featured_new_name,fopen($request->file('featured')), 'r+');
 
 
         $post = Post::create([
@@ -152,7 +152,7 @@ class PostsController extends Controller
         if ( $request->hasFile('featured')  ) {
             $featured = $request->featured;
             $featured_new_name = time().$featured->getClientOriginalName();
-            storage::disk('ftp')->put($file_new_name,fopen($request->file('featured')), 'r+');
+            Storage::disk('ftp')->put($featured_new_name,fopen($request->file('featured')), 'r+');
 
            
     
