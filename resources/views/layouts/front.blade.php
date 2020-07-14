@@ -2,7 +2,7 @@
 
 		<!-- PAGE HEADER -->
 		<div class="page-header">
-			<div class="page-header-bg" style="background-image: url('{{$post->featrued}}');"></div>
+			<div class="page-header-bg" style="background-image: secure_url('{{$post->featrued}}');"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 text-center">
