@@ -43,10 +43,14 @@ return [
 
     'disks' => [
 
-        'local' => [
-            'driver' => 'local',
-            'root' => storage_path('app'),
+        'ftp' => [
+            'driver' => 'ftp',
+            'host'=>'files.000webhost.com',
+            'username'=>'larapost3',
+            'password'=>'basel__ali890',
+            'root' => '/public_html/images',
         ],
+         
 
         'public' => [
             'driver' => 'local',

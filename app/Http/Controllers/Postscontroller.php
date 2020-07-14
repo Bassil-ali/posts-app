@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
 class PostsController extends Controller
 {
 
@@ -84,14 +85,14 @@ class PostsController extends Controller
 
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
-        $featured->move('uploads/posts',$featured_new_name);
+        storage::disk('ftp')->put($file_new_name,fopen($request->file('featured')), 'r+');
 
 
         $post = Post::create([
             "title"    => $request->title,
             "content"  => $request->content,
             "category_id"  => $request->category_id,
-            "featrued" => 'uploads/posts/'.$featured_new_name,
+            "featrued" => 'https://larapost3.000webhostapp.com/images'.$featured_new_name,
             "slug"    => $request->title, // my new post => my-new-post
             "user_id" => Auth::id()
         ]);
@@ -151,9 +152,9 @@ class PostsController extends Controller
         if ( $request->hasFile('featured')  ) {
             $featured = $request->featured;
             $featured_new_name = time().$featured->getClientOriginalName();
-            $featured->move('uploads/posts/',$featured_new_name);
+            storage::disk('ftp')->put($file_new_name,fopen($request->file('featured')), 'r+');
 
-            $post->featrued = 'uploads/posts/'.$featured_new_name;
+           
     
         }
 

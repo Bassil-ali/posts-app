@@ -2,7 +2,7 @@
 
 		<!-- PAGE HEADER -->
 		<div class="page-header">
-			<div class="page-header-bg" style="background-image: secure_url('{{$post->featrued}}');"></div>
+			<div class="page-header-bg" style="background-image:url('{{$post->featrued}}');"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 text-center">
@@ -113,7 +113,7 @@
 </body>
 
 </html>
-<script src='{{secure_asset("js/jquery.min.js")}}'></script>
-	<script src='{{secure_asset("js/bootstrap.min.js")}}'></script>
-	<script src='{{secure_asset("js/jquery.stellar.min.js")}}'></script>
-	<script src='{{secure_asset("js/main.js")}}'></script>
+<script src='{asset("js/jquery.min.js")}}'></script>
+	<script src='{asset("js/bootstrap.min.js")}}'></script>
+	<script src='{asset("js/jquery.stellar.min.js")}}'></script>
+	<script src='{asset("js/main.js")}}'></script>

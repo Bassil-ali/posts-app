@@ -32,7 +32,7 @@
 
 
                           
-                          <form secure_action="{{route('users.profile.update')}}" method="POST" enctype="multipart/form-data" >
+                          <form action="{{route('users.profile.update')}}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field()}}
     
                             <div class="form-group">
