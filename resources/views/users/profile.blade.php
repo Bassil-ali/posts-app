@@ -32,7 +32,7 @@
 
 
                           
-                          <form action="{{route('users.profile.update')}}" method="POST" enctype="multipart/form-data" >
+                          <form secure_action="{{route('users.profile.update')}}" method="POST" enctype="multipart/form-data" >
                             {{ csrf_field()}}
     
                             <div class="form-group">
@@ -44,16 +44,16 @@
     
                             <div class="form-group">
                               <label for="name">User</label>
-                              <input type="text" class="form-control" name="name"  value="{{$user->name}}">
+                              <input type="text" class="form-control" name="name"  secure_value="{{$user->name}}">
                              </div>
                             
                              <div class="form-group">
                                     <label for="name">Email</label>
-                                    <input type="text" class="form-control" name="email"  value="{{$user->email}}">
+                                    <input type="text" class="form-control" name="email"  secure_value="{{$user->email}}">
                                    </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="text" class="form-control" name="password"  value="{{$user->password}}">
+                                <input type="text" class="form-control" name="password"  secure_value="{{$user->password}}">
                                 </div>
     
                            
@@ -61,19 +61,19 @@
                            @if ($user->profile)
                            <div class="form-group">
                             <label for="name">Facebook</label>
-                            <input type="text" class="form-control" name="facebook"  value="{{$user->profile->facebook}}">
+                            <input type="text" class="form-control" name="facebook"  secure_value="{{$user->profile->facebook}}">
                             </div>
 
 
                         <div class="form-group">
                             <label for="name">Twitter</label>
-                            <input type="text" class="form-control" name="twitter"  value="{{$user->profile->twitter}}">
+                            <input type="text" class="form-control" name="twitter"  secure_value="{{$user->profile->twitter}}">
                             </div>
 
 
                         <div class="form-group">
                             <label for="name">Github</label>
-                            <input type="text" class="form-control" name="github"  value="{{$user->profile->github}}">
+                            <input type="text" class="form-control" name="github"  secure_value="{{$user->profile->github}}">
                             </div>
 
 
