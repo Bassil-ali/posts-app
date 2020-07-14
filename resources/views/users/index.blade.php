@@ -36,7 +36,7 @@
                                             <th scope="row">
                                                 @foreach ($profiles as $profile)
                                                 @if ($profile->user_id == $user->id)
-                                                <img src="{{$profile->avatar}}" alt="" class="img-thumbnail" width="50px" height="50px">
+                                                <img secure_src="{{$profile->avatar}}" alt="" class="img-thumbnail" width="50px" height="50px">
   
                                                 @endif
                                                 @endforeach
