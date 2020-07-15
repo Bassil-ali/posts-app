@@ -85,14 +85,15 @@ class PostsController extends Controller
 
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
-        Storage::disk('ftp')->put($featured_new_name,fopen($request->file('featured')), 'r+');
+        $featured->move('uploads/posts',$featured_new_name);
+
 
 
         $post = Post::create([
             "title"    => $request->title,
             "content"  => $request->content,
             "category_id"  => $request->category_id,
-            "featrued" => 'https://larapost3.000webhostapp.com/images'.$featured_new_name,
+            "featrued" => 'https://larapost3.000webhostapp.com/images/'.$featured_new_name,
             "slug"    => $request->title, // my new post => my-new-post
             "user_id" => Auth::id()
         ]);
@@ -152,8 +153,10 @@ class PostsController extends Controller
         if ( $request->hasFile('featured')  ) {
             $featured = $request->featured;
             $featured_new_name = time().$featured->getClientOriginalName();
-            Storage::disk('ftp')->put($featured_new_name,fopen($request->file('featured')), 'r+');
+            $featured->move('uploads/posts/',$featured_new_name);
 
+            $post->featrued = 'uploads/posts/'.$featured_new_name;
+    
            
     
         }
