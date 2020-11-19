@@ -34,6 +34,11 @@
 					 
 					<!-- post -->
 					<div class="post post-row">
+						    <div class="alert alert-dark" role="alert">
+                            <p>
+                                <img  class="rounded-circle" alt="Cinque Terre" style="width: 50px; height: 20px" src="{{$post->avatar}}">
+                                <span>Created by:</span>{{$post->user_name}}</p>
+                        </div>
 						<a class="post-img" href="{{route('post.show', ['slug' => $post->slug])}}"><img src="{{$post->featrued}}" alt=""></a>
 						<div class="post-body">
 							<div class="post-category">

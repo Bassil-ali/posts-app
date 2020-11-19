@@ -46,8 +46,8 @@
                               </div>
                             </div>
                           </div>
-                   
-                    
+
+
 
 
 
@@ -62,7 +62,7 @@
                                                   <h5 class="card-title">{{$tags_count}}</h5>
                                                  </div>
                                               </div>
-                    
+
                                   </div>
                                   <div class="col-sm">
                                         <div class="card bg-light mb-3" style="max-width: 18rem;">
@@ -85,14 +85,14 @@
 
 
 
-                   
-                        
-                       
-                         
-                         
-                        
-                         
-                         
+
+
+
+
+
+
+
+
 
 
 

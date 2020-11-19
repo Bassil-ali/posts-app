@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\profile;
 use Illuminate\Support\Facades\Storage;
 class PostsController extends Controller
 {

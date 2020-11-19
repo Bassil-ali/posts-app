@@ -22,8 +22,8 @@
                         <table class="table table-striped">
                                 <thead>
                                   <tr>
-                                    <th scope="col"> No </th>
-                                    <th scope="col"> Title </th>
+                                    <th scope="col"> title </th>
+                                    <th scope="col"> Edite </th>
                                     
                                 <th scope="col">Edit</th>
                                     {{--      <th scope="col">Delete</th>  --}}
@@ -38,13 +38,13 @@
                                            </td>
                                             
                                             <td> 
-                                              <a class="" href="{{route('tag.edit',['id' =>$tag->id ])}}">   
-                                                        <i class="fas fa-edit"></i>
+                                              <a class="btn btn-primary" href="{{route('tag.edit',['id' =>$tag->id ])}}">   
+                                                     edite
                                                    </a>  
                                             </td>
                                             <td> 
-                                            <a class="" href="{{route('tag.delete',['id' =>$tag->id ])}}">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <a class="btn btn-danger" href="{{route('tag.delete',['id' =>$tag->id ])}}">delete
+                                                   
                                             </a>
                                            </td> 
                                           </tr>

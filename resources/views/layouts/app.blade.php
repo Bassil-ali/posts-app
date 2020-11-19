@@ -17,12 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
- 
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-   
+
 
 
 </head>
@@ -31,14 +31,10 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   
+
                     BASSIL ALI
                 </a>
                 <br>
-                 <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                   
-                    Dashboard
-                </a>
 
 
 
@@ -48,20 +44,26 @@
 
 
                 @if(Auth::user()->admin)
+                 <a class="navbar-brand" href="{{ url('/dashboard') }}">
+
+                    Dashboard
+                </a>
                 <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
+
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                             Users
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
+                             
                             <a class="dropdown-item" href="{{route('users')}}">Users</a>
                             <a class="dropdown-item" href="{{route('users.create')}}">create user</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Edit</a>
+                          
                           </div>
                         </li>
-                        
+
                       </ul>
 
 
@@ -72,27 +74,27 @@
                                 Settings
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
+
                                 <a class="dropdown-item" href="{{route('settings')}}">Show</a>
-                                 
+
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Edit</a>
+                            
                               </div>
                             </li>
-                            
+
                           </ul>
 
 
-              @endif
 
-                
+
+
 
 
 
 
                 <ul class="navbar-nav mr-auto">
-                     
-                    
+
+
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
@@ -101,10 +103,10 @@
                             <a class="dropdown-item" href="{{route('category.create')}}">Create</a>
                             <a class="dropdown-item" href="{{route('categories')}}">Categories</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Edit</a>
+                         
                           </div>
                         </li>
-                        
+
                       </ul>
 
 
@@ -119,30 +121,31 @@
                                 <a class="dropdown-item" href="{{route('tag.create')}}">Create</a>
                                 <a class="dropdown-item" href="{{route('tags')}}">Tags</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Edit</a>
+                               
                               </div>
                             </li>
-                            
+
                           </ul>
 
 
 
                 <ul class="navbar-nav mr-auto">
-                     
-                    
+
+
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Posts
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('post.create')}}">Create</a>
+                       <a class="dropdown-item" href="{{route('post.create')}}">creat</a>
                         <a class="dropdown-item" href="{{route('posts')}}">Posts</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/post/trashed">Posts soft deleted</a>
                       </div>
                     </li>
-                    
+
                   </ul>
+                   @endif
                   @endif
 
 
@@ -174,9 +177,9 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                
 
-                               
+
+
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
@@ -207,8 +210,8 @@
     </div>
 
     @yield('scripts')
-    
- 
+
+
 
 
 </body>

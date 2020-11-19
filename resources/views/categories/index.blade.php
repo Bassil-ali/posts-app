@@ -20,7 +20,7 @@
                         <table class="table table-striped">
                                 <thead>
                                   <tr>
-                                    <th scope="col"> No </th>
+                                    <th scope="col"> title </th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                     
@@ -31,13 +31,13 @@
                                     <tr>
                                             <th scope="row">{{$category->name}}</th>
                                             <td> 
-                                                <a class="" href="{{route('category.edit',['id' =>$category->id ])}}">
-                                                        <i class="fas fa-edit"></i>
+                                                <a class="btn btn-primary" href="{{route('category.edit',['id' =>$category->id ])}}">
+                                                    edite
                                                 </a>
                                             </td>
                                             <td> 
-                                            <a class="" href="{{route('category.delete',['id' =>$category->id ])}}">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <a class="btn btn-danger" href="{{route('category.delete',['id' =>$category->id ])}}">delete
+                                                  
                                             </a>
                                            </td> 
                                           </tr>

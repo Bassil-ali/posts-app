@@ -34,7 +34,7 @@
                                  <tr>
                                          <th scope="row">
                                    <img src="{{$post->featrued}}" alt="{{$post->title}}" class="img-thumbnail" width="100px" height="100px">
-                                             
+                                         
                                          </th>
                                          <th scope="row">{{$post->title}}</th>
                                          
