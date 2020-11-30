@@ -21,7 +21,7 @@ class siteUIcontroller extends Controller
         $blog_name= Setting::latest()->first()->blog_name;
         $categories=Category::latest()->get();
         $tags =Tag::latest()->get();
-        $post=Post::latest()->get();
+        $post=Post::latest()->paginate(1);
         return view('index',compact('blog_name','categories','tags','post'));
 
 

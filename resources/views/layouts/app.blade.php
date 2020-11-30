@@ -26,7 +26,7 @@
 
 
 </head>
-<body>
+<body  class="hold-transition skin-blue sidebar-mini">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -56,11 +56,11 @@
                             Users
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             
+
                             <a class="dropdown-item" href="{{route('users')}}">Users</a>
                             <a class="dropdown-item" href="{{route('users.create')}}">create user</a>
                             <div class="dropdown-divider"></div>
-                          
+
                           </div>
                         </li>
 
@@ -78,7 +78,7 @@
                                 <a class="dropdown-item" href="{{route('settings')}}">Show</a>
 
                                 <div class="dropdown-divider"></div>
-                            
+
                               </div>
                             </li>
 
@@ -103,7 +103,7 @@
                             <a class="dropdown-item" href="{{route('category.create')}}">Create</a>
                             <a class="dropdown-item" href="{{route('categories')}}">Categories</a>
                             <div class="dropdown-divider"></div>
-                         
+
                           </div>
                         </li>
 
@@ -121,7 +121,7 @@
                                 <a class="dropdown-item" href="{{route('tag.create')}}">Create</a>
                                 <a class="dropdown-item" href="{{route('tags')}}">Tags</a>
                                 <div class="dropdown-divider"></div>
-                               
+
                               </div>
                             </li>
 

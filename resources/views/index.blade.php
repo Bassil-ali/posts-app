@@ -3,7 +3,7 @@
 
 
     body {
-	background:#E3E3E3;
+	background:#688392;
 
 }
 
@@ -17,6 +17,11 @@
     display: bloke;
     background-color:gray;
 
+}
+.alert-dark {
+    color: #1b1e21;
+    background-color: #456b9669;
+    border-color: #c6c8ca;
 }
 .back-to-top:hover{
     background-color:#ffff;
@@ -43,6 +48,10 @@
 
     </script>
 
+
+
+<body>
+
 	<div class="alert alert-dark" role="alert">
  	<center>
 <a href="/login" type="a" class="btn btn-success">  login  </a>
@@ -50,6 +59,7 @@
 		<h1>LARAPOS</h1></center>
 		<center><h4>Log in and make your posts, choose the section and go</h4></center>
 </div>
+
 
 
 
@@ -68,10 +78,10 @@
                         <div class="alert alert-dark" role="alert">
                             <p>
                                 <img  class="rounded-circle" alt="Cinque Terre" style="width: 30px; height: 20px" src="{{$post->avatar}}">
-                                <span>Created by:</span>{{$post->user_name}}</p>
+                                <span>By: </span>{{$post->user_name}}</p>
                         </div>
 
-						<a class="post-img md-3" href="{{route('post.show', ['slug' => $post->slug])}}"><img style="height:300px" src="{{$post->featrued}}" alt="" class="page-header-bg" ></a>
+						<a class="post-img" href="{{route('post.show', ['slug' => $post->slug])}}"><img style="height:300px" src="{{$post->featrued}}" alt="" class="page-header-bg" ></a>
 						<div class="post-body">
 							<div class="post-category">
 								<a href="{{route('category.show', ['id' => $post->category->id])}}">{{$post->category->name}}</a>
@@ -83,11 +93,13 @@
 								<li>{{$post->created_at}}</li>
 							</ul>
 
-						</div>
+                        </div>
+
 
 					</div>
 					@endforeach
-				<!-- /post -->
+                <!-- /post -->
+
 
 			</div>
 
@@ -96,6 +108,8 @@
 
 	</div>
 </div>
+</body>
+
 
 
 
